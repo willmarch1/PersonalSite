@@ -1,0 +1,517 @@
+<!--
+    This is an HTML comment. In HTML there are no single-line comments, so you MUST open and close these
+    as you use them. This comment will be visible when you view page source in the browser. This makes
+    it a "client side" comment.
+
+    Comments CANNOT be nested inside themselves, but you can nest a comment
+    in the middle of other HTML code. 
+
+-->
+<!DOCTYPE html>
+<!-- Above is our DOCTYPE declaration. It is the first of the six required tags
+for a bare-minimum HTML page. It tells the browser which version of HTML we are
+using. For the current version, HTML5, we use the tag above -->
+<html>
+    <!-- The html tag contains all of our HTML code. It should open beneath
+    your DOCTYPE declaration and close at the very bottom of the file.  -->
+    <head>
+        <!-- The head tag holds all of the set up information the browser needs
+        to build our page. We can put meta tags, a title tag, stylesheets, and
+        scripts in the head. Info here will not be displayed to the user.-->
+        <meta charset="utf-8"/>
+        <!-- Our metatags hold metadata. This metatag above tells the browser
+        to use the UTF-8 character set. -->
+        <meta name="author" content="Will March"/>
+        <meta name="description" content="Learn about your favorite coding subjects."/>
+        <meta name="keywords" content="education, code, education for the aspiring developer"/>
+        <!-- These metatags are used by search engines to find and display metadata to users
+        searching for content on the web. Typically, the "description" is what will be displayed
+        on a search engine's result page. -->
+
+        <title> Classes | Continuing Online Developer Education</title>
+        <!-- The title tag tells the browser what to display on the title of its tab/window.  -->
+
+        <!-- Below we add an external JavaScript file for our FontAwesome icons. This external script
+        is called a Content Delivery Network, or CDN. CDNs are useful for keeping your codebase light
+        and saving time coding, but we have to rely on the external resource remaining available and unbroken. -->
+        <script src="https://kit.fontawesome.com/e8ddeadb44.js" crossorigin="anonymous"></script>
+
+        <!-- Below we will add link tags that connect to Google Fonts APIs and allow us to load a customm font. -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" />
+
+         <!-- Below we link to our external stylesheet.  -->
+        <link rel="stylesheet" href="/css/custom.css"/>
+
+        <!-- Below we will code an internal stylesheet. This is a way we can write our CSS rules directly
+        In our HTML document. t is less specific than Inline Styling, and although more resuable, it only
+        will apply to HTML content on this page.  -->
+        <style>
+            /* Within the <style> tag, we are now coding in CSS mode. This is the syntax for a CSS comment.
+                They are multiline comments with no nesting (just like HTML) */
+            nav {
+                padding: 1% 10%; /*The first number is top and bottom, the second number is left and right */
+            }
+            div#nav-right {
+                /* Adjacent Selector */
+                width: 75%;
+                display: inline-block;
+            }  
+            nav a {
+                /* Descendant Selector */
+                text-decoration: none;
+            }  
+            nav a#navbar-brand {
+                width: 15%;
+                margin-left: 5%; /* value only applied to specified site */
+                margin-top: 2%;
+                display: inline-block;
+            }
+            nav ul {
+                text-align: right;
+            }
+            nav ul li:not(:last-child) {
+             /* Adding : (colon) after a selector allows you to use a Pseudo-classes. This is a structual
+            pseudo-class combines with the negation pseudo-class (not)
+            
+            Apply styling to all <li> tags in the <nav> except the last one */
+                margin: 0 2%;
+                padding: 1% 2%;
+                border-radius: 2px; /* rounds corners */
+            }
+            nav ul li:last-child {
+                /*only applied to the last <li> */
+                 margin-left: 2%;
+                 padding: 1% 2% 1% 2%; /* top right bottom left (start at top and move clockwise) */
+                 border-radius: 2px; /* rounds corners */
+            }
+            .nav-item {
+                display: inline-block;
+                list-style: none;
+                font-size: 24px;
+            }
+            #nav-right .brand-container a {
+                margin: 0 1%;
+            }    
+            .brand-container {
+                text-align: right;
+                padding-bottom: 3.5%;
+            }
+
+         /*#region Color Notes*/
+            /*
+                There are many ways to incorporate colors into your website. 
+                The first is using named colors. These are a limited amount of color options
+                that are supported by most modern web browsers. (140 options)
+
+                There are also color coding systems. With these, you get more specialized 
+                options
+                    - Most of them make use of numeric values to represent levels of red, 
+                    green, and blue (referred to as RGB)
+                    - Using RGB there are 16 million different color options
+
+                Hexadecimal Notation
+                #RRGGBB
+                Original color coding system, but it is not easily readable
+                0 is the first digit (you start at zero)
+                Second digit 0-9 and A(10)-F(15)
+                16 causes the first digit to increment and a second digit is added starting
+                at 0 (16 = 10)
+                Pattern continues up to 255
+
+                Hex Shorthand
+                #RGB
+                Shortens the numeric representation of a color to 3 digits from 6
+                This limits color options to 4096
+                Can only be used when there are repeating digits in each color value
+                ex. #229988 => #298
+
+                Percentage Ranges
+                rbg(R%, G%, B%) 1-100% for each
+
+                Numeric Ranges 
+                rbg(r, g, b) uses standard decimal numbers for each color 0-255
+
+                RGBA
+                rgba(r, g, b, a) 
+                Alpha adds transparency and should be between 0(none) and 1(full)
+            */
+            /*#endregion*/
+            nav .fa-brands {
+                color: #0378a6; /* hexadecimal color*/
+            }
+            nav ul li:hover {
+                /* This is a dynamic pseudo class. It applies styling when you hover over the element. */
+                background-color: rgb(163, 183, 191);
+            }
+            nav ul li:hover a {
+                color: black; /* named color */
+            }
+            nav ul li:last-child:hover {
+                padding-right: 2%;
+            }
+            nav ul li.active {
+                background-color: rgb(163, 183, 191);
+            }
+            nav ul li.active a {
+                color: black;
+            }
+
+            /*#region Font Notes*/
+            /*
+                Fonts are declared in a font-family. Reading from left to right, this is a list of 
+                fonts starting with the specific desired font followed by a list of back-ups until
+                you get to a generic font type at the end. 
+
+                The fonts available for the browser to use are the fonts on the specific device
+                accessing the website. 
+
+                Web-Safe fonts are those that are widely available across most devices. This is a moving target. 
+
+                Alternatively, you can import fonts through a CDN to ensure the same font is used to
+                render your site for all devices. 
+
+                Font sizes can be declared in pixels (px) which are fixed width values. Can also use relative units of measure, 
+                like em's.
+                    Stands for the letter M - widest letter in English language
+                    Font-Size is figured based on the font-size of the parent element
+                    Example: if parent has font-size of 12px and child has font-size of 1.5em, then child would have 18px font
+                    Best practice is to declare font-size in px at body level and use em's for all other values. 
+            */
+            /*#endregion*/
+
+           nav ul li a {
+               font-family: "Comfortaa", cursive; 
+               color: #4d6873;
+           } 
+
+        </style>
+
+    </head>
+
+    <body>
+        <!-- The body tag will contain all of our content that is displayed to
+        the user. -->
+        <nav> <!--The nav tag contains navigation links for our site-->
+            <!-- Below is an anchor tag, which are opened with <a> and closed with </a>. This
+            tag is for linking internal and external resources on a webpage. -->
+            <a href="/index.html" id="navbar-brand">
+                <!-- Below is am img tag. By nesting the <img> tag in an <a> tag, we make the image clickable. -->
+                <img src="/images/CODE-logo-withText.png" style="display: inline-block; height: 5em; width: auto;" alt="CODE logo"/>
+                <!-- The style="" attribute above is our first example of seeing CSS in action. When we put the
+                CSS directly into a tag's attribute, it is called Inline Styling. This form of styling is the most
+                specific way to apply styling, but the least resuable. Since we want to aim for DRY (Don't repeat
+                Yourself) code, we want to avoid Inline Styling wherever possible. -->
+            </a>
+
+            <!-- Below is a div tag, one of the most basic tags in HTML. It defines a division in our document
+            and is used as a container for other HTML elements. a div can then we styled with CSS or manipulated
+            with JavaScript by selecting its id or any assigned classes.  -->
+            <div id="nav-right">
+                <div class="brand-container">
+                    <a href="https://facebook.com" target="_blank">
+                        <i class="fa-brands fa-facebook-square fa-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <i class="fa-brands fa-twitter-square fa-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank"> 
+                        <i class="fa-brands fa-linkedin fa-2xl"></i>
+                    </a>
+                </div>
+
+                <!-- The ul tag defines an unordered list. By default, these will display in the browser
+                as bulleted lists. It is common to see navigation links in unordered list tags.  -->
+                <ul>
+                    <!-- Lists contain list items in li tags. Each li below is a link to another page on our site. -->
+                    <li class="nav-item">
+                        <a href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/classes.html">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact.html">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <header class="section-padding">
+            <h1 class="heading-style-top text-center">Our Classes</h1>
+        </header>
+
+        <main>
+            <section class="section-padding bg-light-gray" id="class-topics">
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/HTML5.png" alt="HTML5 logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-brand-blue">HTML</span>
+                            <h4>HyperText Markup Language: The Web's bones</h4>
+                            <p>
+                                In this class we will work to understand the basics of HTML tags and how they create the
+                                structure of a web page. All of the latest tags in HTML5 will be covered.
+                            </p>
+                            <!-- This <a> is using a named anchor link which scrolls the user to the element with
+                                the supplied id (#class-list) on this page -->
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/css3.png" alt="CSS3 Logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-light-blue">CSS</span>
+                            <h4>Cascading Style Sheets: Make it pretty on every screen!</h4>
+                            <p>
+                               In this class we will teach you how to style up web pages using CSS to make sure everything
+                               looks great, and how to use media queries to ensure your content works on various screen sizes.
+                            </p>
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/javascript.png" alt="JavaScript logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-dark-blue">JavaScript</span>
+                            <h4>JavaScript: The programming language of the web.</h4>
+                            <p>
+                             In this class we discuss JavaScript. JavaScript is the programming language that browsers can
+                             read. As such, the possibilities are nearly limitless as to what we can accomplish with it!
+                            </p>
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/Bootstrap5.png" alt="Bootstrap5 logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-brand-blue">Bootstrap</span>
+                            <h4>Bootstrap: Taking the trial-and-error out of responsive web design.</h4>
+                            <p>
+                             In this class you will learn all about the most popular front-end framework on the web. The CSS
+                             box model is easily tamed by the simple and repeatable Bootstrap classes in this toolkit. 
+                            </p>
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/react.png" alt="React logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-light-blue">ReactJS</span>
+                            <h4>React: a JavaScript library for building interactive applications.</h4>
+                            <p>
+                             In this class you will work with one of the most popular JavaScript libraries on the web:
+                             ReactJS. It is a declaritive, component-based library that makes applications truly
+                             composable, as each component can be added piece by piece.  
+                            </p>
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/jquery.png" alt="jQuery logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-dark-blue">jQuery</span>
+                            <h4>jQuery: Write less, do more!</h4>
+                            <p>
+                             In this class you will discover the ease with which you can manipulate your UI using the jQuery
+                             library. jQuery's API makes selecting and manipulating HTML elements or responding to events
+                             fast, lightweight and extensible.   
+                            </p>
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/CSharp.png" alt="C# Logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-dark-blue">C#</span>
+                            <h4>C#: Microsoft's general-purpose object-oriented programming language.</h4>
+                            <p>
+                                In this class we will explore basic programing concepts using C# including data types, looping, branching, casting, consuming user input and error handling.
+                            </p>
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/SQL-1.png" alt="SQL logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-dark-blue">SQL</span>
+                            <h4>SQL: Relational databases for organized data storage and queries</h4>
+                            <p>
+                                In this class you will learn how to create SQL databases and how to store data in relational tables. We also will cover how to search your data to find relevant information once it is stored. 
+                            </p>
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+                <article class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="/images/Node-js.png" alt="Node.js Logo" />
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="tag tag-dark-blue">Node.js</span>
+                            <h4>Node.js: Runing JavaScript environments outside of the browser</h4>
+                            <p>
+                                In this class, we'll explore the Node.js runtime environment that allows us to execute JavaScript outside of the browser. We will explore how Node.js enables us to build dynamic web applications with popular libraries and frameworks. 
+                            </p>
+                            <a href="#class-list" class="primary-button-large">
+                                See Classes
+                            </a>    
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="class-list" class="class-list section-padding">
+                <table class="table table-striped custom-table">
+                    <thead>
+                        <tr>
+                            <!-- the scope attribute below is used by screen readers to identify the title of each column -->
+                            <th scope="col">Course #</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Instructor</th>
+                            <th scope="col">Days</th>
+                            <th scope="col">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1392</td>
+                            <td scope="row">HTML Basics</td>
+                            <!-- The scope attribute above identifies the header or key piece of info the row is about -->
+                            <td>
+                                <a href="#">George Reddingford</a>
+                                <small>Experienced web developer</small>
+                            </td>
+                            <td>Mon, Wed</td>
+                            <td>1:00 PM - 3:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>4616</td>
+                            <td scope="row">CSS Styling</td>
+                            <td>
+                                <a href="#">Charlie Green</a>
+                                <small>Web Design Consultant</small>
+                            </td>
+                            <td>Thurs</td>
+                            <td>5:00 PM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>9841</td>
+                            <td scope="row">JavaScript Essentials</td>
+                            <td>
+                                <a href="#">Bill Wright</a>
+                                <small>Web Application Programmer</small>
+                            </td>
+                            <td>Mon, Fri</td>
+                            <td>9:00 AM - 10:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>9548</td>
+                            <td scope="row">Flex Boxin' with Bootstrap</td>
+                            <td>
+                                <a href="#">Margaret Hannibal</a>
+                                <small>Front-end web design specialist</small>
+                            </td>
+                            <td>Wed</td>
+                            <td>11:00 AM - 1:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>7346</td>
+                            <td scope="row">Building Snappy Apps in ReactJS</td>
+                            <td>
+                                <a href="#">Lois Henderson</a>
+                                <small>ReactJS Full-stack developer</small>
+                            </td>
+                            <td>Sat</td>
+                            <td>10:00 AM - 11:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>8743</td>
+                            <td scope="row">Intuitive Interfaces with jQuery</td>
+                            <td>
+                                <a href="#">Richard Wilson</a>
+                                <small>Senior JavaScript web developer</small>
+                            </td>
+                            <td>Tue, Thurs</td>
+                            <td>8:00 AM - 10:00 AM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+
+         <!-- The footer tag defines a special footer section in our page. The footer is
+        always at the very bottom of the page and should be consistent across all pages
+        of our website. Footers usually contain copyright, contact info, and sometimes
+        a site map or a link to go back to the top of the page. -->
+        <footer class="bg-light-gray">
+            <div class="text-center">
+                <div class="margin-bottom-2">
+                    <a href="https://facebook.com" target="_blank">
+                        <i class="fa-brands fa-facebook-square fa-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <i class="fa-brands fa-twitter-square fa-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-2xl"></i>
+                    </a>
+                </div>
+                <p class="font-black font-125">&copy; Centriq Training. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>

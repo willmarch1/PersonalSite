@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Yanone+Kaffeesatz:wght@300&display=swap");
+
+html, body {
+    height: 100%;
+}
+body {
+    background-color: black;
+    font-size: 16px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    color: white;
+    margin: 0;
+}
+
+#header-image {
+    width: 48%;
+    text-align: center; /* aligns all content inside of the element to the center, not just text. */
+    display: inline-block;
+    margin-left: 7%;
+}
+
+#header-image img {
+    width: 95%; 
+}
+
+.header-right-content {
+    width: 32%;
+    float: right;
+    margin-right: 13%;
+    margin-top: 2%;
+}
+
+.heading-style-top {
+    font-size: 3em; /* em is a relative length unit in CSS. 1em = the current font size (16 px), so 3 em = 3 * 16 = 48px */
+    font-weight: bold;
+    color: #a3b7bf;
+    font-family: "Comfortaa", cursive;
+    margin-top: 0;
+}
+
+.primary-button-large {
+    background-color: #4d6873;
+    color: white;
+    padding: 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25em;
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    opacity: 0.6; /* makes the button appear faded. No opacity = 1, full opacity = 0 (invisible) */
+}
+
+.primary-button-large:hover {
+    opacity: 1;
+    color: black;
+}
+
+.font-125 {
+    font-size: 1.25em;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.margin-top-5 {
+    margin-top: 5%;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15%;
+}
+
+.clear {
+    clear:both;
+}
+
+/**************************
+     About Us Styling 
+***************************/
+.section-padding {
+    padding: 3% 5%;
+}
+.bg-gray {
+    background-color: #4d6873;
+}
+.left-content {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+}
+.right-content {
+    float: right;
+    width: 65%;
+}
+.heading-style-secondary {
+    color: #222e33;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: "Comfortaa", cursive;
+    margin-top: 0;
+}
+.font-gray {
+    color: #ebf0f2;
+}
+
+/* *****************************
+        Services Styling
+*********************************/
+
+.services-item {
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+    padding: 0 4%;
+}
+
+.service-icon {
+    margin: 5% 0;
+}
+
+/* **********************************
+         Call-To-Action Styling 
+**************************************/
+
+.grid-image-left {
+    display: inline-block;
+    width: 45%;
+    margin-right: 5%;
+}
+
+.grid-image-right {
+    display: inline-block;
+    width: 45%;
+}
+
+.grid-content-right {
+    display: inline-block;
+    width: 45%;
+    position: relative; /* position the element relative to where it would normally appear on the screen */
+    top: -70px;
+    text-align: center;
+}
+
+.grid-content-left {
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+    margin-right: 5%;
+    position: relative;
+    top: -70px;
+}
+
+.grid-image-left img,
+.grid-image-right img {
+    width: 100%;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.heading-accent-left-text::after {
+    /* ::after creates a pseudo element place after the selected element */
+    position: absolute; /* position the element relative to its first positioned ancestor */
+    top: 15%;
+    left: 0;
+    content: "";
+    display: inline-block;
+    width: 50%;
+    height: 5px;
+    background-image: linear-gradient(100deg, #5b92bb, #070b0d);
+}
+.heading-accent-right-text::after {
+    position: absolute;
+    top: 15%;
+    right: 0;
+    content: "";
+    display: inline-block;
+    width: 50%;
+    height: 5px;
+    background-image: linear-gradient(100deg, #070b0d, #5b92bb);
+}
+
+
+/********************************
+        Footer Styling 
+*********************************/
+
+.text-center {
+    text-align: center;
+}
+.font-black {
+    color: black;
+}
+.bg-light-gray {
+    background-color: rgb(163, 183, 191);
+}
+.margin-bottom-2 {
+    margin-bottom: 2%;
+}
+footer {
+    padding: 4% 10% 2% 10%;
+}
+footer .fa-brands {
+    color: black;
+    margin: 0 2%;
+}
+footer a {
+    text-decoration: none;
+}
+
+/**********************************
+        Class Cards Styling 
+***********************************/
+
+.card-container {
+    display: inline-block;
+    width: 23.5%;
+    margin: 2% 4.75%;
+}
+.card {
+    margin: 10px;
+    background-color: #ebf0f2;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    /* The above box-shadow rule applies a shadow to the element
+    box-shadow: [horizontal] [verticle] [blur (shadows sharpness)] [color] */
+    overflow: hidden;  
+    /* any content that flows outside of this div will not be seen- keeps the image from cutting off rounded corners. */
+    width: 300px;
+}
+
+.card-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /*#region Object-Fit Notes*/
+  /*
+  This defines how the image is manipulated to fill is container. Possible values:
+  - fill: default, image is resized to given dimension. Will be stretched or compressed as needed.
+  - contain: keep aspect ratio, but resized so that the entire image fits within given dimensions
+  - cover: keep aspect ratio and fill given dimensions. Image will be clipped if needed to fit area.
+  - none: the image is not resized
+  - scale-down: image is scaled down to the smallest version of none or contain
+  */
+  /*#endregion*/
+}
+.card-body{
+    padding: 20px;
+    min-height: 250px;
+    color: black;
+}
+
+.card-body h4, .tag {
+    font-family: "Comfortaa", cursive;
+}
+.card-body p {
+    font-size: 18px;
+    margin: 0 0 40px; /* Top Left&Right Bottom */
+    text-align: justify;
+}
+.tag {
+    border-radius: 50px;
+    font-size: 14px;
+    margin: 0;
+    color: #ebf0f2;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.tag-brand-blue {
+    background-color: #0378a6;
+}
+.tag-light-blue {
+    background-color: #1db6f2;
+}
+.tag-dark-blue {
+    background-color: #1b2240;
+}
+
+/************************************
+            Table Styles
+**************************************/
+.table-striped tbody tr:nth-of-type(odd) {
+    /* This is another psuedo class called nth of type. Matches elements based on their position among
+    siblings of the same type of tag. Here we only want the odd numbered siblings that are <tr> */
+    background-color: rgba(100, 100, 100, 0.3);
+}
+.class-list a {
+    transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    /* The transition property defines what animation occurs when things change. Above we are saying the 
+  transition will last for 0.3s, the animation will be applied to changes to any CSS property, and it 
+  will be an ease animation (slow start, fast middle, slow end). Read more about this property
+  here: https://www.w3schools.com/css/css3_transitions.asp
+
+  The vendor pre-fixes (i.e. -webkit and -o) ensures the functionality performs similarly across web
+  browsers. Not all properties need this, but newer CSS properties tend to need it because it takes
+  different amounts of time for each browser to implement new features. Read more about these pre-fixes
+  here: https://www.thoughtco.com/css-vendor-prefixes-3466867 */
+}
+.class-list a, a:hover {
+    text-decoration: none !important;
+}
+.custom-table {
+    min-width: 900px; /* Sets min width for the table. This prevents it from shrinking any smaller regardless of screen size. */
+    margin: 0 auto; /* This aligns content inside of a container. Auto for horizontal puts the element in the center of its parent. */
+    border-collapse: collapse; /* This ensures when 2 cells come together the borders don't stack, but collapse into one. */
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.custom-table thead tr,
+.custom-table thead th {
+    padding-bottom: 30px;
+    border-top: none;
+    border-bottom: none !important;
+    color: #fff;
+    text-transform: uppercase; /* all letters will be uppercase */
+    letter-spacing: 0.2rem;
+}
+.custom-table tbody td {
+    color: #777;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 300;
+    border: none;
+    /* apply transitions to all td elements */
+    transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+}
+.custom-table tbody td small {
+    color: rgba(255, 255, 255, 0.3);
+    display: block;
+    font-weight: 300;
+}
+.custom-table tbody td a {
+    color: rgba(255, 255, 255, 0.3);
+}
+/* The rule sets below set up the changes that the transition will be applied to (i.e text color change) */
+.custom-table tbody tr:hover td,
+.custom-table tbody tr:focus td {
+    color: #fff;
+}
+.custom-table tbody tr:hover td a,
+.custom-table tbody tr:focus td a {
+    color: #fdd114;
+}
+
+/**************************************
+             Team Styling
+****************************************/
+.service-icon a {
+    text-decoration: none;
+}
+
+.rounded-corners {
+    border-radius: 2.5%;
+}
+.image-shadow {
+    box-shadow: 0 20px 16px -16px #000;
+    /* box-shadow: [horizontal] [vertical] [blur] [spread] [color] */
+}
+.team-row {
+    padding: 5% 10%;
+    text-align: center;
+}
+.team-card {
+    display: inline-block;
+    width: 27%;
+    margin-right: 6%;
+}
+.team-img-container {
+    margin-right: 0;
+}
+.team-img {
+    width: 76%;
+}
+#team {
+    background-image: linear-gradient(to bottom, #a3b7bf, #4d6873, #000);
+}
+.team-row h3 {
+    text-underline-offset: 5px;
+}
+.team-row.dark h3 {
+    text-decoration: underline solid #fdd114;
+}
+.team-row h3 {
+    text-decoration: underline solid #0378a6;
+}
+.team-body {
+    border-radius: 15px 50px;
+}
+.team-row .team-card .team-body {
+    background-color: #4d6873;
+}
+.team-row.dark .team-card .team-body {
+    background-color: #a3b7bf;
+}
+.team-body h4, .team-body p {
+   width: 56%;
+   margin: 0 auto;
+   /* text-align: center; */
+}
+.team-body h4 {
+    font-size: 1.25em;
+    margin-top: 7%;
+    margin-bottom: 5%; 
+}
+.team-row .team-card .team-body h4 {
+    color: #fdd114;
+}
+.team-row.dark .team-card .team-body h4 {
+    color: #0378a6;
+}
+.team-body p {
+    margin-bottom: 7%;
+}
+.team-row.dark .team-card .team-body p {
+    color: #000;
+}
+
+/********************************************
+                Contact Form Styles
+***********************************************/
+#contact-form {
+    width: 100%;
+}
+.form-group {
+    margin: 5% 0;
+}
+.form-group label {
+    font-size: 1.5em;
+    min-width: 25%;
+    color: #ebf0f2;
+    display: inline-block;
+}
+.form-group input {
+    width: 70%;
+    min-height: 25px;
+    display: inline-block;
+    border-radius: 2px;
+    border: solid 2px #0378a6;
+}
+.form-group textarea {
+    border-radius: 2px;
+    border: solid 2px #0378a6;
+    width: 95%;
+    max-width: 95%;
+}
